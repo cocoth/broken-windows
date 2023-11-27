@@ -1,0 +1,88 @@
+.neon{
+    /* border: 0.4rem solid #fff;
+    padding: 2rem;
+    border-radius: 2rem; */
+    animation: neon 1.5s  infinite  alternate;
+    /* text-shadow: 
+        0 0 10px #fff, 
+        0 0 20px #fff, 
+        0 0 30px #fff, 
+        0 0 40px #00f, 
+        0 0 70px #00f, 
+        0 0 80px #00f; */
+
+}
+@keyframes neon{
+    0%, 20%, 30%, 40%, 60%, 100%{
+        text-shadow: 
+            0 0 10px #fff, 
+            0 0 15px #fff, 
+            0 0 25px #fff, 
+            0 0 40px #00f, 
+            0 0 50px #00f,
+            0 0 60px #00f;
+        /* box-shadow:
+            0 0 10px #fff, 
+            0 0 15px #fff, 
+            0 0 25px #fff, 
+            0 0 40px #00f, 
+            0 0 50px #00f,
+            0 0 60px #00f;
+        ; */
+    }
+    21%, 25%, 45%{
+        text-shadow: none;
+    }
+    
+    /* from{
+        text-shadow: 
+            0 0 10px #fff, 
+            0 0 20px #fff, 
+            0 0 30px #fff, 
+            0 0 40px #00f, 
+            0 0 70px #00f,
+            0 0 80px #00f;
+    }
+    to{
+        text-shadow: 
+            0 0 10px #bbb, 
+            0 0 20px #bbb, 
+            0 0 30px #bbb, 
+            0 0 40px rgb(0, 0, 196), 
+            0 0 70px rgb(0, 0, 196), 
+            0 0 80px rgb(0, 0, 196);
+    } */
+}
+.hover-neon:hover{
+    text-shadow: 
+    0 0 1px #fff, 
+    0 0 2px #fff, 
+    0 0 3px #fff, 
+    0 0 4px #00f, 
+    0 0 7px #00f,
+    0 0 20px #00f;
+    ;
+    animation: 1.5s ease-in-out alternate;
+    scale: 1.25rem;
+    transition: all;
+    transition-duration: 1.2s;
+}
+
+.blury-navbar{
+    background: rgba(69, 68, 75, 0.475);
+}
+.hover-items:hover{
+    background: rgba(255, 255, 255, 0.233);
+}
+.darker-navbar{
+    background: rgba(20, 20, 20, 0.486)
+}
+.info-container{
+    overflow: hidden;
+    max-height: 0;
+    transform: translateY(20px);
+    transition: max-height 0.5s ease-in-out;
+}
+.info-container.open{
+    max-height: 1000px;
+}
