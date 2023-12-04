@@ -13,17 +13,17 @@ const MainPage = () => {
     <div>
         <section className='flex justify-center'>
             <div className='space-x-2 my-5'>
-                <Link href="/Profile"
+                <Link href="/profile"
                 className='hover-neon hover:scale-125 hover:font-semibold transition-all ease-in-out duration-300 '
                 >
                     Profile
                 </Link> |
-                <Link href="/Blogs"
+                <Link href="/blogs"
                 className='hover-neon hover:scale-125 hover:font-semibold transition-all ease-in-out duration-300 '
                 >
                     Blogs
                 </Link> |
-                <Link href="/Portfolio"
+                <Link href="/portfolio"
                 className='hover-neon hover:scale-125 hover:font-semibold transition-all ease-in-out duration-300 '
                 >
                     Portfolio
@@ -32,7 +32,7 @@ const MainPage = () => {
         </section>
         <section >
             {/* <MainController/> */}
-            <WindowsNavbar/>
+            {/* <WindowsNavbar/> */}
             {/* <LinuxNavbar/> */}
         </section>
 

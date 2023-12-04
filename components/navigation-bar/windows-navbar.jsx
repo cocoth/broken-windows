@@ -126,23 +126,25 @@ const WindowsNavbar = () => {
   
   
   return (
-    <div className='fixed bottom-0 left-0'>
+    // <div className='fixed bottom-0 left-0'>
+    <div className=''>
       <div className='max-h-[50%] max-w-[25%]' >
         {showComponent&&(
           <CloseMenu onClose={toggleComponents}>
             <StartMenu/>
           </CloseMenu>)}
       </div>
-      <section className='flex justify-between items-center '>
-        {/* <div className="flex items-center"> */}
+      <section className='flex justify-between items-center mx-3 '>
+        <div className="flex items-center">
           {showInfo===100 && <HoverInfo label="start"/>}
-        {/* </div> */}
+        </div>
 
         <div className="flex items-center gap-1">
-          <div className="flex items-center ">
+          <div className="flex flex-row items-center mr-24">
             {itemsTogleMenu.map((item,i)=>(
-              <div key={i} className='flex'>
-                {showInfo=== i && <HoverInfo label={itemsTogleMenu[i].label} position={`-translate-y-6 right-14 `}/>}
+              <div key={i} className='flex flex-row'>
+                {/* {showInfo=== i && <HoverInfo label={itemsTogleMenu[i].label} position={`-translate-y-6 `}/>} */}
+                <HoverInfo label={itemsTogleMenu[i].label} position={`-translate-y-6 `}/>
               </div>
             ))}
             {/* {console.log("label: ", handleMouseEnter)} */}
@@ -154,7 +156,7 @@ const WindowsNavbar = () => {
       </section>
 
 
-      <div className='relative h-10 w-screen blury-navbar'>
+      <div className=' h-10 w-screen blury-navbar'>
         <section className='flex justify-between items-center mr-3 text-white opacity-100 font-semibold'>
           <div className='flex items-center'>
             <div className={`group hover-items`}

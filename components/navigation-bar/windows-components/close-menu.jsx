@@ -2,7 +2,7 @@
 import React,{useState, useEffect, useRef} from 'react';
 
 
-const CloseMenu = ({onClose, children}) => {
+const CloseMenu = ({onClose, children, position}) => {
     const menuRef = useRef(null)
     const handleClick = (e)=>{
         if (menuRef.current && !menuRef.current.contains(e.target)){
@@ -14,9 +14,9 @@ const CloseMenu = ({onClose, children}) => {
         return()=>{
             document.removeEventListener('click', handleClick)
         }
-    },[onClose])
+    },[])
     return (
-        <div ref={menuRef}>
+        <div ref={menuRef} className={position}>
             {children}
         </div>
     )
