@@ -13,9 +13,11 @@ module.exports = {
         'ktp':['Kdam Thmor Pro']
       },
       backgroundImage: {
+        'loading-windows': "url('/img/just-a-moment-loading.gif')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+
       },
     },
   },

@@ -47,7 +47,7 @@ const WindowsNavbar2 = () => {
                 <section className={`${menuBar&&'justify-between'}`}>
                     <div className="flex justify-start items-start">
                         {showComponentStartMenu&&(
-                        <CloseMenu onClose={toggleComponentStartMenu} position="min-h-[50%] max-w-[25%]">
+                        <CloseMenu onClose={toggleComponentStartMenu} position="min-h-[50%] min-w-[25%]">
                             <StartMenu/>
                         </CloseMenu>
                         )}
@@ -55,7 +55,7 @@ const WindowsNavbar2 = () => {
                     <div className="flex justify-end items-end">
                         {/* <NotificationMenu/> */}
                         {showComponentNotificationMenu&&(
-                            <CloseMenu onClose={toggleComponentNotificationMenu} position="min-h-[calc(100vh-2.5rem)] max-w-[30%]">
+                            <CloseMenu onClose={toggleComponentNotificationMenu} position="min-h-[calc(100vh-2.5rem)] max-w-[35%]">
                                 <NotificationMenu/>
                             </CloseMenu>
                         )}

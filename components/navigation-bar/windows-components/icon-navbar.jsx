@@ -36,7 +36,7 @@ export default function iconMenu (){
   
   const itemsNotificationMenu = [
     {icon: <GoLocation />, label: "Location"},
-    {icon: <IoLeafOutline/>, label: "Battery saver"},
+    {icon: <IoLeafOutline className="rotate-45"/>, label: "Battery saver"},
     {icon: <FaBluetoothB />, label: "Bluetooh"},
     {icon: <LuSunMoon />, label: "Night light"},
   

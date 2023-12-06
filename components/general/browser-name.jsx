@@ -9,6 +9,7 @@ import { FaSafari } from "react-icons/fa";
 
 
 const BrowserName = () => {
+  try {
     const ua = navigator.userAgent.toLowerCase()
     const browser = (
         ua.includes('firefox') ? (<BsBrowserFirefox/>):
@@ -18,8 +19,11 @@ const BrowserName = () => {
         ua.includes('edg') ? (<BsBrowserEdge/>):
         ua.includes('safari') ? (<FaSafari />):
         (<BsQuestion/>) 
-    )
-  return browser
+        )
+    return browser
+  } catch (error) {
+    throw(error)
+  }
 }
 
 export default BrowserName
