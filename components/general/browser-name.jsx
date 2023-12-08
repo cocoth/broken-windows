@@ -9,7 +9,7 @@ import { FaSafari } from "react-icons/fa";
 
 
 const BrowserName = () => {
-  try {
+  try { 
     const ua = navigator.userAgent.toLowerCase()
     const browser = (
         ua.includes('firefox') ? (<BsBrowserFirefox/>):

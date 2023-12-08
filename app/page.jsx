@@ -1,4 +1,3 @@
-"use client"
 import Image from 'next/image'
 import BackgroundParticles from '@/components/landing-page/particle-background'
 import MainPage from '@/components/landing-page/main-page'
@@ -24,11 +23,11 @@ import shutdownToggleClick from '@/components/navigation-bar/windows-components/
 
 export default function Home() {
   // const {pageRender} = routingPages()
+
   return (
     <main>
       {/* {pageRender&&<pageRender/>} */}
       <div className='min-h-screen flex justify-center items-center'>
-      {/* <div className='flex flex-col min-h-screen justify-between items-center'> */}
         <StarsBackground/>
         <section className=''>
           <div className='flex justify-center items-center text-center'>
@@ -42,9 +41,6 @@ export default function Home() {
         </section>
         <nav className='fixed left-0 bottom-0'>
           <WindowsNavbar2/>
-          {/* <h1 className='text-2xl text-white'>
-            asdfas
-          </h1> */}
         </nav>
       </div>
     </main>    
