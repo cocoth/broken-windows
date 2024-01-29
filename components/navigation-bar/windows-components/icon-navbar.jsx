@@ -45,7 +45,7 @@ export default function iconMenu (){
     {icon: <FaRegShareFromSquare />, label: "Nearby sharing"},
     {icon: <GoGear />, label: "All settings"},
   
-    {icon: <BsWifi/>, label: "Network"},
+    {icon: <BsWifi className="-rotate-45" />, label: "Network"},
     {icon: <TbDevices2 />, label: "Connect"},
     {icon: <MdDevices />, label: "Project"},
     {icon: <MdOutlineVpnKey />, label: "VPN"},

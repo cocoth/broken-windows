@@ -68,15 +68,34 @@
     transition-duration: 1.2s;
 }
 
+
 .blury-navbar{
     background: rgba(69, 68, 75, 0.475);
 }
+
+/* hover navabar*/
 .hover-items:hover{
+    /* border: solid .5px #ffe;
+    backdrop-filter: blur;
+    -webkit-backdrop-filter: blur(.5em);
+    -webkit-backdrop-filter: grayscale(); */
     background: rgba(255, 255, 255, 0.233);
 }
+/* hover navabar*/
+
+/* focus rightbar items */
+
+.btn-items{
+    background: rgba(0, 79, 248, 0.651);
+}
+
+/* focus rightbar items */
+
+
 .darker-navbar{
     background: rgba(20, 20, 20, 0.486)
 }
+
 .info-container{
     overflow: hidden;
     max-height: 0;

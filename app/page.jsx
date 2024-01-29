@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import BackgroundParticles from '@/components/landing-page/particle-background'
 import MainPage from '@/components/landing-page/main-page'
