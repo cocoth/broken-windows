@@ -14,69 +14,69 @@ import BattreyMenu from "./windows-components/battrey-menu";
 import TooltipWindow from "./windows-components/utils/tooltip-window";
 
 const WindowsNavbar2 = () => {
-    const {itemsNavMenu} = iconMenu()
+    const { itemsNavMenu } = iconMenu()
 
     const {
-        timeNow, 
-        monthLongFormat, 
-        monthNumberFormat 
+        timeNow,
+        monthLongFormat,
+        monthNumberFormat
     } = DateTimeComponent()
 
     const {
-        showLabel, HoverLabel, 
+        showLabel, HoverLabel,
         handleMouseEnter, handleMouseLeave
     } = MouseMove()
 
     const [showComponentStartMenu, setShowComponentStartMenu] = useState(false)
-    const toggleComponentStartMenu =()=>{
+    const toggleComponentStartMenu = () => {
         setShowComponentStartMenu(!showComponentStartMenu)
     }
     const [showComponentNotificationMenu, setShowComponentNotificationMenu] = useState(false)
-    const toggleComponentNotificationMenu =()=>{
+    const toggleComponentNotificationMenu = () => {
         setShowComponentNotificationMenu(!showComponentNotificationMenu)
     }
     const menuBar = [showComponentStartMenu, showComponentNotificationMenu]
 
     const [iconMapClick, setIconMapClick] = useState(null)
-    const iconMapping = ()=>{
+    const iconMapping = () => {
         setIconMapClick(!iconMapClick)
     }
     function iconClick(i) {
         const handlerIconClick = {
             0: <div className=""></div>,
-            1: <BattreyMenu/>,
+            1: <BattreyMenu />,
             2: <div className=""></div>,
             3: <div className=""></div>
         }
-        setIconMapClick(handlerIconClick[i]|| <h1>N/A</h1>)
+        setIconMapClick(handlerIconClick[i] || <h1>N/A</h1>)
         return handlerIconClick[i]
     }
-    useEffect(()=>{
+    useEffect(() => {
         console.log("start menu:", showComponentStartMenu);
         console.log("notif menu:", showComponentNotificationMenu);
-    },[showComponentStartMenu, showComponentNotificationMenu])
+    }, [showComponentStartMenu, showComponentNotificationMenu])
 
     return (
         <div>
             <section className="">
-                <section className={`${menuBar&&'justify-between'}`}>
+                <section className={`${menuBar && 'justify-between'}`}>
                     <div className="flex justify-start items-start">
-                        {showComponentStartMenu&&(
-                        <CloseMenu onClose={toggleComponentStartMenu} position="min-h-[50%] min-w-[25%]">
-                            <StartMenu/>
-                        </CloseMenu>
+                        {showComponentStartMenu && (
+                            <CloseMenu onClose={toggleComponentStartMenu} position="min-h-[50%] min-w-[25%]">
+                                <StartMenu />
+                            </CloseMenu>
                         )}
                     </div>
                     <div className="flex justify-end items-end">
                         {/* <NotificationMenu/> */}
-                        {showComponentNotificationMenu&&(
-                            <CloseMenu onClose={toggleComponentNotificationMenu} position="min-h-[calc(100vh-2.5rem)] max-w-[35%]">
-                                <NotificationMenu/>
+                        {showComponentNotificationMenu && (
+                            <CloseMenu onClose={toggleComponentNotificationMenu} position="min-h-[calc(100vh-2.5rem)] w-[29%]">
+                                <NotificationMenu />
                             </CloseMenu>
                         )}
                     </div>
                     <div className="flex justify-end">
-                        {iconMapClick&&(
+                        {iconMapClick && (
                             <CloseMenu onClose={iconMapping}>
                                 {iconMapClick}
                             </CloseMenu>
@@ -84,30 +84,30 @@ const WindowsNavbar2 = () => {
                     </div>
                 </section>
 
-               
+
             </section>
 
 
             <section className=' h-10 w-screen blury-navbar'>
                 {showLabel === 100 && (
-                <div className="flex ml-6 ">
-                    <TooltipWindow text="start" />
-                </div>
+                    <div className="flex ml-6 ">
+                        <TooltipWindow text="start" />
+                    </div>
                 )}
                 <div className="flex justify-between items-center text-white font-semibold">
                     <div className="flex items-center">
                         <div className="group hover-items"
-                        onMouseEnter={()=>handleMouseEnter(100)}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={toggleComponentStartMenu}>                            
+                            onMouseEnter={() => handleMouseEnter(100)}
+                            onMouseLeave={handleMouseLeave}
+                            onClick={toggleComponentStartMenu}>
                             <div className="py-3 px-4">
-                                <BsWindows className="group-hover:text-blue-500"/>
+                                <BsWindows className="group-hover:text-blue-500" />
                             </div>
                         </div>
                         <div className="mx-2 flex items-center">
                             <div className="text-2xl hover-items">
                                 <div className="p-2 text-white">
-                                    <BrowserName/>
+                                    <BrowserName />
                                 </div>
                             </div>
                         </div>
@@ -115,34 +115,34 @@ const WindowsNavbar2 = () => {
 
                     <div className="flex items-center gap-1">
                         <div className="flex items-center">
-                            {itemsNavMenu.map((item,i)=>(
+                            {itemsNavMenu.map((item, i) => (
                                 <div key={i} className="group hover-items">
-                                  {showLabel===i && ( 
-                                        <TooltipWindow text={item.label}/>
+                                    {showLabel === i && (
+                                        <TooltipWindow text={item.label} />
                                     )}
                                     <div key={i} className="py-3 px-1"
-                                    onMouseEnter={()=>handleMouseEnter(i)}
-                                    onMouseLeave={handleMouseLeave}
-                                    onClick={()=>iconClick(i)}>
+                                        onMouseEnter={() => handleMouseEnter(i)}
+                                        onMouseLeave={handleMouseLeave}
+                                        onClick={() => iconClick(i)}>
                                         {item.icon}
                                     </div>
                                 </div>
                             ))}
                         </div>
                         <div className="ml-2 justify-center hover-items cursor-default max-h-10 max-w-max text-sm text-center"
-                        onMouseEnter={()=>handleMouseEnter(98)}
-                        onMouseLeave={handleMouseLeave}>
-                        {showLabel=== 98 && <TooltipWindow text={monthLongFormat.split('/').join(' ')}/>}
+                            onMouseEnter={() => handleMouseEnter(98)}
+                            onMouseLeave={handleMouseLeave}>
+                            {showLabel === 98 && <TooltipWindow text={monthLongFormat.split('/').join(' ')} />}
                             <div className="font-light">{timeNow}</div>
                             <div className="font-light">{monthNumberFormat}</div>
                         </div>
                         <div className="mx-2 hover-items"
-                        onMouseEnter={()=>handleMouseEnter(99)}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={toggleComponentNotificationMenu}>
-                            {showLabel=== 99 && <TooltipWindow text="notification"/>}
+                            onMouseEnter={() => handleMouseEnter(99)}
+                            onMouseLeave={handleMouseLeave}
+                            onClick={toggleComponentNotificationMenu}>
+                            {showLabel === 99 && <TooltipWindow text="notification" />}
                             <div className="p-3">
-                                <BsFillChatSquareTextFill/>
+                                <BsFillChatSquareTextFill />
                             </div>
                         </div>
                     </div>
